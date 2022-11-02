@@ -1,0 +1,3 @@
+-Soldity smart contract.
+-Python Trading Bot which interacts with smart contract
+-WFTM/USDC pair.
