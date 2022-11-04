@@ -40,8 +40,7 @@ def main():
             exchanges, symbol)
         increase_percentage = (bid_price - ask_price) / ask_price * 100
 
-        print("[{0} - {1}] - [{2}] - Price Spread: {3:.2}%".format(ask_exchange_id,
-                                                                   bid_exchange_id, symbol, increase_percentage))
+    
 
         if increase_percentage > max_increase_percentage:
             exchange_symbol = symbol
@@ -53,18 +52,15 @@ def main():
 
         if increase_percentage >= min_spread:
             break
-    print("-----------------------------")
+    
 
-    if max_increase_percentage > 0:
-        print("\n----------Settings-----------")
+    if max_increase_percentage > 0:        
         ask_amount = get_min_amount(min_ask_exchange_id, exchange_symbol)
-        print("Min Ask amount: {0}".format(ask_amount))
+        
         bid_amount = get_min_amount(max_bid_exchange_id, exchange_symbol)
-        print("Min Bid amount: {0}".format(bid_amount))
+        
         amount = max(ask_amount, bid_amount)
-        print("Actual amount: {0}".format(amount))
-        print("Min spread percentage: {0}%".format(min_spread))
-        print("Min profit: {0}%".format(min_profit))
+        
 
 
         print("[{0} - {1}] - [{2}]: Spread percentage: {3:.2}%".format(min_ask_exchange_id,
